@@ -1,0 +1,28 @@
+.App {
+  text-align: center;
+}
+
+.nav-bar ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-bar ul>li {
+  display: inline-block;
+  margin: 20px;
+}
+
+.nav-bar ul>li>a {
+  font-size: 18px;
+  font-weight: 500;
+  text-decoration: none;
+  color: #000;
+}
+
+
+.nav-bar a:hover,
+.nav-bar a:active,
+.nav-bar a.active {
+  color: red;
+}

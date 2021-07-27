@@ -1,0 +1,13 @@
+.Book {
+    width: 300px;
+    margin: 10px auto;
+    padding: 10px;
+    border: 1px solid #000;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.Book:hover {
+    color: red;
+    cursor: pointer;
+}
