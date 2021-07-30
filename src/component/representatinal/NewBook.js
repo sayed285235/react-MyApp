@@ -12,6 +12,14 @@ class NewBook extends Component {
             writer:"",
             description:""
         }
+
+        this.handleInputChange = this.handleInputChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    handleSubmit = event => {
+        console.log(this.state);
+        event.preventDefault();
     }
 
     handleInputChange = event => {
@@ -21,10 +29,6 @@ class NewBook extends Component {
         this.setState({
             [name]: value
         });
-    }
-    
-    componentDidUpdate(){
-        console.log(this.state);
     }
 
     render(){
@@ -36,21 +40,21 @@ class NewBook extends Component {
                             New Book Entry
                         </CardHeader>
                         <CardBody>
-                            <Form>
+                            <Form onSubmit={this.handleSubmit}>
                                 <FormGroup>
                                     <Label for="bookName">BookName</Label>
                                     <Input type="text" name="bookName" id="bookName" placeholder="BookName" 
-                                        value={this.state.bookName} onChange={(event)=> this.handleInputChange(event)}/>
+                                        value={this.state.bookName} onChange={this.handleInputChange}/>
                                 </FormGroup>
                                 <FormGroup>
                                     <Label for="writer">Writer</Label>
                                     <Input type="text" name="writer" id="writer" placeholder="Writer" 
-                                    value={this.state.writer} onChange={(event)=> this.handleInputChange(event)}/>
+                                    value={this.state.writer} onChange={this.handleInputChange}/>
                                 </FormGroup>
                                 <FormGroup>
                                     <Label for="exampleText">Descriptions</Label>
                                     <Input type="textarea" name="description" id="description" placeholder="Description"  
-                                    value={this.state.description} onChange={(event)=> this.handleInputChange(event)}/>
+                                    value={this.state.description} onChange={this.handleInputChange}/>
                                 </FormGroup>
     
                                 <Button type="Submit" value="submit">Submit</Button>
